@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pancake House Shelby</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Pancake House in Shelby, NC. Fluffy pancakes, Belgian waffles, omelets and biscuits &amp; gravy. Open daily 6 AM to 2 PM at 149 W Dixon Blvd.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/addons/"}}
+</script>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="infobar">
+  <span>Open daily 6 AM – 2 PM</span><span class="dot hide-sm">•</span>
+  <span class="hide-sm">149 W Dixon Blvd, Shelby, NC</span><span class="dot">•</span>
+  <span>(704) 482-9096</span>
+</div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Pancake House home"><b>PANCAKE HOUSE</b><i>— Shelby's breakfast table</i></a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#menu">Menu</a>
+    <a href="#landing">Our stack</a>
+    <a href="#visit">Visit</a>
+  </nav>
+  <button class="nav-cart" id="navCart" type="button" aria-label="Open your order"><span class="lbl-l">Your order</span><span class="lbl-s">Order</span> <span class="count" data-count>0</span></button>
+</header>
+
+<main id="top">
+  <!-- pinned 3D story -->
+  <section class="story" id="story" aria-label="Good mornings, great flips">
+    <div class="stage">
+      <svg class="blob" viewBox="0 0 600 520" aria-hidden="true"><path d="M318 22c86-10 176 30 215 104 39 73 29 150 2 222-28 74-92 146-180 160-87 14-139-36-214-58C67 427-4 400 0 314c4-85 76-104 106-176C136 66 232 32 318 22z"/></svg>
+      <canvas id="scene" aria-hidden="true"></canvas>
+      <div class="ghost" aria-hidden="true"><span>GREAT</span><span>FLIPS.</span></div>
+      <img class="fallback-stack" src="assets/classic-stack.jpg" alt="Stack of buttermilk pancakes with butter and maple syrup">
+
+      <div class="panel panel-hero" id="panelHero">
+        <span class="eyebrow">Shelby, NC · Since your first Saturday</span>
+        <h1 class="display split"><span class="tone-1">Good mornings.</span> <span class="tone-2">Great flips.</span></h1>
+        <p>Golden buttermilk pancakes, crisp Belgian waffles and real country breakfasts, flipped fresh on West Dixon Boulevard every morning from 6 AM.</p>
+        <div class="cta-row">
+          <a class="btn btn-caramel" href="#menu">Flip into the menu</a>
+          <a class="circle-btn" href="#menu" aria-label="Go to the menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+
+      <div class="panel panel-stack" id="panelStack">
+        <span class="eyebrow">Build the stack</span>
+        <h2 class="display split"><span class="tone-3">Stack it.</span> <span class="tone-1">Stack it</span> <span class="tone-2">high.</span></h2>
+        <p>Short stack of three or tall stack of five. Add blueberries, chocolate chips, bananas, pecans or whipped cream, then finish it with warm syrup.</p>
+        <div class="cta-row">
+          <button class="btn btn-caramel" type="button" data-open-builder>Build your stack</button>
+        </div>
+      </div>
+
+      <div class="progress-dots" aria-hidden="true"><b class="on"></b><b></b><b></b><b></b></div>
+      <div class="scroll-cue" aria-hidden="true">Scroll<i></i></div>
+      <div class="toffee-wipe" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- landing with real syrup pour -->
+  <section class="landing" id="landing" aria-label="Stack your kind of morning">
+    <img class="poster" src="assets/syrup-pour-poster.jpg" alt="" aria-hidden="true">
+    <video id="pour" src="assets/syrup-pour.mp4" poster="assets/syrup-pour-poster.jpg" muted loop playsinline preload="metadata" aria-label="Maple syrup pouring over a stack of pancakes with butter"></video>
+    <span class="floaty s1 slice" aria-hidden="true"></span>
+    <span class="floaty s2 slice" aria-hidden="true"></span>
+    <span class="floaty s3 slice" aria-hidden="true"></span>
+    <div class="landing-inner">
+      <div>
+        <h2 class="display split-in">Stack your kind of morning.</h2>
+        <p class="lede">One more pancake. Always.</p>
+        <div class="cta-row">
+          <a class="btn btn-paper" href="#menu">See the menu</a>
+          <a class="circle-btn" href="#visit" aria-label="Find us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="sweet">
+        <div class="ring" aria-hidden="true">
+          <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+            <text><textPath href="#circ">THE SWEET LANDING • FRESH OFF THE GRIDDLE • </textPath></text></svg>
+          <span class="slice"></span>
+        </div>
+        <div>
+          <p>Warm syrup, real butter, and a stack built exactly how you like it.</p>
+          <button class="btn btn-orange" type="button" data-open-builder style="margin-top:14px">Build your stack <span aria-hidden="true">›</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+  <!-- menu -->
+  <section class="section" id="menu" aria-labelledby="menuTitle">
+    <div class="wrap">
+      <div class="menu-head">
+        <div>
+          <span class="eyebrow">The full menu</span>
+          <h2 class="display reveal" id="menuTitle"><span class="tone-1">The whole</span> <span class="tone-2">griddle.</span></h2>
+        </div>
+        <p>Everything is cooked to order. Add dishes to your order, pick a short or tall stack, and call it in or bring it to the counter for pickup.</p>
+      </div>
+      <div class="tabs" role="tablist" id="tabs" aria-label="Menu categories"></div>
+      <div id="menuRoot"></div>
+      <p class="menu-note">Prices shown are for online ordering and may change. Ask your server about allergens.</p>
+    </div>
+  </section>
+
+  <!-- visit -->
+  <section class="section visit" id="visit" aria-labelledby="visitTitle">
+    <div class="wrap visit-grid">
+      <div>
+        <span class="eyebrow">Come hungry</span>
+        <h2 class="display reveal" id="visitTitle"><span class="tone-1">Pull up</span> <span class="tone-2">a chair.</span></h2>
+        <p class="addr">149 W Dixon Blvd<br>Shelby, NC 28152</p>
+        <div class="phone-row">
+          <span class="phone" id="phone">(704) 482-9096</span>
+          <button class="copy" type="button" id="copyPhone">Copy number</button>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-caramel" href="https://www.google.com/maps/search/?api=1&amp;query=149+W+Dixon+Blvd+Shelby+NC+28152" target="_blank" rel="noopener">Get directions</a>
+          <a class="btn btn-ghost" href="https://www.yelp.com/biz/pancake-house-shelby" target="_blank" rel="noopener">Read reviews on Yelp</a>
+        </div>
+        <div class="rating"><span class="stars" aria-hidden="true">★★★★½</span><span>4.5 stars from 59 Yelp reviews</span></div>
+      </div>
+      <div class="hours">
+        <h3>Griddle hours</h3>
+        <div class="open-now" id="openNow"><i></i><span>Checking hours…</span></div>
+        <table id="hoursTable" aria-label="Opening hours"></table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p class="foot-word" aria-hidden="true">Pancake House</p>
+  <div class="foot-row">
+    <span>149 W Dixon Blvd, Shelby, NC 28152 · (704) 482-9096</span>
+    <span>Open every day, 6 AM – 2 PM</span>
+    <span>© <span id="yr">2026</span> Pancake House Shelby</span>
+  </div>
+</footer>
+
+<!-- floating cart -->
+<button class="fab" id="fab" type="button" aria-label="Open your order">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+  <span class="count" data-count data-n="0">0</span>
+</button>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Your order" aria-hidden="true">
+  <div class="drawer-head"><h3 id="drawerTitle">Your order</h3><button class="x" type="button" id="closeCart" aria-label="Close order">✕</button></div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot" id="drawerFoot"></div>
+</aside>
+
+<div class="scrim" id="mscrim"></div>
+<div class="modal" id="builder" role="dialog" aria-modal="true" aria-labelledby="builderTitle" aria-hidden="true">
+  <div class="modal-card" style="position:relative">
+    <button class="x modal-x" type="button" id="closeBuilder" aria-label="Close stack builder">✕</button>
+    <div class="preview">
+      <h3 id="builderTitle">Build your stack</h3>
+      <div class="plate"><div class="pstack" id="pstack"></div></div>
+    </div>
+    <div class="options" id="builderOptions"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="shop.js"></script>
+<script type="module" src="scene.js"></script>
+</body>
+</html>
