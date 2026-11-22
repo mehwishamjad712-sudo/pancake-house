@@ -278,7 +278,7 @@ a{color:inherit}
 /* ---------- footer ---------- */
 footer{background:var(--cocoa);color:var(--cream);overflow:hidden;
   padding-block:60px 36px;padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
-.foot-word{font-family:var(--f-display);font-size:clamp(58px,15vw,240px);line-height:.85;color:var(--mustard);text-transform:uppercase;margin:0 0 24px;white-space:nowrap}
+.foot-word{font-family:var(--f-display);font-size:11vw;line-height:.85;color:var(--mustard);text-transform:uppercase;margin:0 0 24px;white-space:nowrap;display:inline-block;max-width:none}
 .foot-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:14px;opacity:.85}
 
 /* ---------- cart fab ---------- */

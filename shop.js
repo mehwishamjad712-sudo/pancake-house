@@ -574,5 +574,20 @@
     once: true
   });
   gsap.from('.hours', { y: 60, rotate: 3, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: '.visit', start: 'top 70%' } });
-  gsap.fromTo('.foot-word', { xPercent: 8 }, { xPercent: -10, ease: 'none', scrollTrigger: { trigger: 'footer', start: 'top bottom', end: 'bottom bottom', scrub: true } });
+  /* footer wordmark: scale the text so it fits the footer width exactly */
+  const footWord = document.querySelector('.foot-word');
+  if (footWord) {
+    const fitFootWord = () => {
+      const avail = footWord.parentElement.clientWidth -
+        parseFloat(getComputedStyle(footWord.parentElement).paddingLeft) -
+        parseFloat(getComputedStyle(footWord.parentElement).paddingRight);
+      footWord.style.fontSize = '100px';
+      const w = footWord.scrollWidth;
+      if (w > 0 && avail > 0) footWord.style.fontSize = (100 * avail / w * 0.99) + 'px';
+    };
+    fitFootWord();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitFootWord);
+    window.addEventListener('resize', fitFootWord);
+    gsap.from(footWord, { y: 40, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: 'footer', start: 'top 85%' } });
+  }
 })();
